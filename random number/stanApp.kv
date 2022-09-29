@@ -1,0 +1,58 @@
+<GameView>:
+    result_label:result_label
+    answer_input:answer_input
+    result_label2:result_label2
+    result_label3:result_label3
+
+    BoxLayout :
+        orientation : "vertical"
+        BoxLayout:
+            size_hint : None, None
+            orientation: "vertical"
+
+        Label:
+            id: result_label
+            text: "Veuillez deviner le chiffre mystere \n situé entre 0 et 100"
+            halign : "center"
+            font_size: 20
+            keep_ration : True
+            bold: True
+            size_hint: 1, 0.2
+            font_name: "micross"
+        Label:
+            id: result_label2
+            text: "Vous avez 5 éssais"
+        Label:
+            id: result_label3
+            text: ""
+        TextInput:
+            id: answer_input
+            margin: 5
+            halign : "left"
+            font_size: 20
+            input_type: "number"
+            multiline: False
+            size_hint: 1, 0.5
+            padding: 5, 15, 5, 5
+            height : 300
+        Button:
+            text: "Valider"
+            size_hint: 1, 0.5
+            bold: True
+            background_color: "#0065EF"
+            on_press: root.check_number()
+            on_press: root.check_essais()
+            on_press: root.check_exit()
+        Button:
+            text: "Jouer à nouveau"
+            size_hint: 1, 0.5
+            bold: True
+            background_color: "#0065EF"
+            on_press: root.renisialize()
+            on_press: root.try_again()
+        Button:
+            text: "Quitter"
+            size_hint: 1, 0.5
+            bold: True
+            background_color: "#0065EF"
+            on_press: root.leave()
